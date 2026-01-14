@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Order Confirmation</title>
+    <style>
+        /* Prevents the background page from scrolling while pop-up is open */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            height: 100%;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Fixed Overlay - keeps it on top of everything */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999; /* Very high number to prevent disappearing */
+        }
+
+        /* The Box - 89% height and width */
+        .modal-content {
+            width: 89vw;
+            height: 89vh;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around; /* Spaces out content vertically */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .icon {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        h1 { font-size: 24px; color: #222; margin: 0; }
+        p { font-size: 18px; color: #555; margin: 10px 0; line-height: 1.4; }
+
+        .call-btn {
+            display: block;
+            background-color: #007AFF; /* iOS Blue */
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div>
+                <div class="icon">✓</div>
+                <h1>Thanks for the Order!</h1>
+                <div class="status-badge">Order In Process</div>
+            </div>
+
+            <p>Your request has been received. Please call us now to confirm your details and finalize the order.</p>
+
+            <a href="tel:+1234567890" class="call-btn">
+                📞 Call for Confirmation
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
